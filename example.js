@@ -139,7 +139,7 @@ function onRemoteTrack(track) {
 
     } else {
         $('body').append(
-            `<audio autoplay='1' id='${participant}audio${idx}' />`);
+            `<audio autoplay='1' muted='true' id='${participant}audio${idx}' />`);
     }
     track.attach($(`#${id}`)[0]);
 }
@@ -217,6 +217,13 @@ function onConnectionFailed() {
  */
 function onDeviceListChanged(devices) {
     console.info('current devices', devices);
+}
+
+function muteSound(){
+  //document.getElementById('localAudio0').muted = "false";
+  //localTracks[0].mute();
+  document.getElementById('localAudio0').mute();
+  //document.getElementById('localAudio0').autoplay= "2";
 }
 
 /**
